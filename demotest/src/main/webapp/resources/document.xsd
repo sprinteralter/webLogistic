@@ -1,0 +1,53 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="DESADV">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element type="xs:long" name="NUMBER"/>
+        <xs:element type="xs:date" name="DATE"/>
+        <xs:element type="xs:date" name="DELIVERYDATE"/>
+        <xs:element type="xs:long" name="ORDERNUMBER"/>
+        <xs:element type="xs:date" name="ORDERDATE"/>
+        <xs:element type="xs:short" name="DELIVERYNOTENUMBER"/>
+        <xs:element type="xs:date" name="DELIVERYNOTEDATE"/>
+        <xs:element type="xs:byte" name="TRANSPORTTYPE"/>
+        <xs:element type="xs:byte" name="TRANSPORTERTYPE"/>
+        <xs:element type="xs:byte" name="SHIPMENTS"/>
+        <xs:element type="xs:long" name="CAMPAIGNNUMBER"/>
+        <xs:element name="HEAD">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:long" name="SUPPLIER"/>
+              <xs:element type="xs:long" name="BUYER"/>
+              <xs:element type="xs:long" name="DELIVERYPLACE"/>
+              <xs:element type="xs:long" name="SENDER"/>
+              <xs:element type="xs:long" name="RECIPIENT"/>
+              <xs:element type="xs:long" name="EDIINTERCHANGEID"/>
+              <xs:element name="PACKINGSEQUENCE">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:byte" name="HIERARCHICALID"/>
+                    <xs:element name="POSITION" maxOccurs="unbounded" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:byte" name="POSITIONNUMBER"/>
+                          <xs:element type="xs:long" name="PRODUCT"/>
+                          <xs:element type="xs:int" name="PRODUCTIDBUYER"/>
+                          <xs:element type="xs:byte" name="DELIVEREDQUANTITY"/>
+                          <xs:element type="xs:string" name="DELIVEREDUNIT"/>
+                          <xs:element type="xs:float" name="ORDEREDQUANTITY"/>
+                          <xs:element type="xs:string" name="ORDERUNIT"/>
+                          <xs:element type="xs:float" name="PRICE"/>
+                          <xs:element type="xs:string" name="DESCRIPTION"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
