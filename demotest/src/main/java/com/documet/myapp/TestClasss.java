@@ -1,5 +1,5 @@
 package com.documet.myapp;
 
-public class TestController {
+public class TestClasss {
 
 }
